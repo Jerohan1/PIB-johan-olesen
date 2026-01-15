@@ -1,10 +1,10 @@
 = Stage 1: Data aquisition and preparation
 
-For the first stage of the project, we will be focusing on acquiring and preparing data for analysis. This includes downloading and organizing the necessary datasets, as well as preprocessing the data to ensure it is ready for downstream analysis. The workflow is illustrated on @stage1.
+For the first stage of the project, the focus was on acquiring and preparing data for analysis. This included downloading and organizing the necessary datasets, as well as preprocessing the data to ensure it was ready for downstream analysis. The workflow is illustrated on @stage1.
 
 For the real dataset set out in the goals, Wang et al @wangScRNAseqScATACseqReveal2025 have made their scRNA-seq and scATAC-seq data available.
 
-The dataset consists of scRNA-seq from 2022 of 5 donors; NOA1, NOA2, NOA3, OA1 and OA2. NOA stands for non-obstructive azoospermia, OA for obstructive azoospermia.
+The dataset consists of scRNA-seq of 5 donors; NOA1, NOA2, NOA3, OA1 and OA2. NOA stands for non-obstructive azoospermia, OA for obstructive azoospermia. In the study the OA patient was used as a control group as OA is not a problem with spermatogenesis, .
 
 The scRNA-seq data was available under NCBI Gene Expression Omnibus ID *GSE202647* from 2022, and was already ready for analysis.
 
@@ -18,7 +18,7 @@ Identifying each file to do correct renaming was done by looking at the read len
 
 `Lane Number` does not matter. `Sample Name` can be anything.
 
-In the case of the NOA3 donor the read length was R1; 50, R2; 49, I1; 8, I2; 16. Thereby producing these four files:
+In the case of the NOA3 donor the read length was R1; `50`, R2; `49`, I1; `8`, I2; `16`. Thereby producing these four files:
 - `SRR31097965_S1_L001_I1_001.fastq`
 - `SRR31097965_S1_L001_I2_001.fastq`
 - `SRR31097965_S1_L001_R1_001.fastq`
@@ -26,4 +26,4 @@ In the case of the NOA3 donor the read length was R1; 50, R2; 49, I1; 8, I2; 16.
 
 The `count` function was run with Cellranger ATAC version 2.2.0 on each sample with reference data _refdata-cellranger-arc-GRCh38-2024-A_ using SLURM. This resulted in the `filtered_peak_bc_matrix.h5`, `fragments.tsv` and `peak_annotation.tsv` for each sample ready for analysis.
 
-Ideally, the data from scRNA-seq and scATAC-seq should be cell matched from their barcodes, but finding public datasets for testis with that criteria was difficult. Instead we will be matching cells by celltype instead. The data in Wang et al's study comes from the same five donors, but sequenced at seperate time points, so the cell barcodes do not match.
+Ideally, the data from scRNA-seq and scATAC-seq should be cell matched from their barcodes, but finding public datasets for testis with that criteria was difficult. Instead, we will be matching cells by celltype instead from donor matched scRNA-seq and scATAC-seq. The data in Wang et al's study comes from the same five donors, three NOA and two OA, but sequenced at different time points, so the cell barcodes do not match.

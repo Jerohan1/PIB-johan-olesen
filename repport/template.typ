@@ -35,7 +35,7 @@
   show heading.where(level: 3): set block(above: 1.75em, below: 1em)
   show heading.where(level: 4): set block(above: 1.55em, below: 1em)
 
-  show figure: set block(breakable: true)
+  //show figure: set block(breakable: true)
 
   //Pagebreak after level 1 headings
   show heading.where(level: 1): it => [

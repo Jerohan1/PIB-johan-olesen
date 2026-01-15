@@ -146,5 +146,59 @@ Example of NOA1 sample:
   label: <atac_integration_individual>,
 )
 
-= pycistopic workflow
+= PyCistopic Workflow
 
+== QC <cistopic_qc>
+
+#subpar.grid(
+  figure(
+    image("figs/pycictopic_on_integrated_files/pycictopic_on_integrated_23_1.png"),
+    caption: [],
+  ),
+
+  figure(
+    image("figs/pycictopic_on_integrated_files/pycictopic_on_integrated_23_2.png"),
+    caption: [],
+  ),
+
+  figure(
+    image("figs/pycictopic_on_integrated_files/pycictopic_on_integrated_23_3.png"),
+    caption: [],
+  ),
+
+  figure(
+    image("figs/pycictopic_on_integrated_files/pycictopic_on_integrated_23_4.png"),
+    caption: [],
+  ),
+
+  figure(
+    image("figs/pycictopic_on_integrated_files/pycictopic_on_integrated_23_5.png"),
+    caption: [],
+  ),
+)
+
+#figure(
+  image("figs/pycictopic_on_integrated_files/pycictopic_on_integrated_70_0.png"),
+  caption: [Statistics of scATAC-seq],
+) <cistopic_stats>
+
+== Binarization plots <bin_plots>
+
+#subpar.grid(
+  figure(
+    image("figs/pycictopic_on_integrated_files/pycictopic_on_integrated_79_0.png"),
+    caption: [Otsu method.],
+  ),
+
+  figure(
+    image("figs/pycictopic_on_integrated_files/pycictopic_on_integrated_81_0.png"),
+    caption: [ntop method. Top 3000 regions chosen.],
+  ),
+
+  figure(
+    image("figs/pycictopic_on_integrated_files/pycictopic_on_integrated_83_0.png"),
+    caption: [Li method.],
+  ),
+  columns: 1,
+  caption: [Binarization plots for the 3 different methods; otsu, ntop and li. x-axis showing standardised probability of region being in topic. y-axis explaining count of regions in `otsu` and `ntop`, count of cells in `li`. Selected indicating number of regions selected for a specific topic. Redline indicating automatic minimum threshold for inclusion in topic.],
+)
